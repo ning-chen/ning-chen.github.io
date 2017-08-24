@@ -37,7 +37,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -121,7 +121,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/24/js数组方法/" data-id="cj6pwg14x0001zcus2iu40qeu" class="article-share-link">Delen</a>
+      <a data-url="http://yoursite.com/2017/08/24/js数组方法/" data-id="cj6pwjyhi000138usv3s24ai0" class="article-share-link">分享</a>
       
       
       
@@ -147,7 +147,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/23/js方法/">js数组方法</a>
+      <a class="article-title" href="/2017/08/23/js方法/">js数组方法总结(一)</a>
     </h1>
   
 
@@ -157,7 +157,7 @@
       
         <!-- Table of Contents -->
         
-        <h2 id="数组方法总结-一"><a href="#数组方法总结-一" class="headerlink" title="数组方法总结(一)"></a>数组方法总结(一)</h2><blockquote>
+        <blockquote>
 <p>该篇文章部分内容参考大漠所写的系列文章，链接如下：<a href="https://www.w3cplus.com/javascript/array-part-5.html" target="_blank" rel="external">https://www.w3cplus.com/javascript/array-part-5.html</a></p>
 </blockquote>
 <p>js数组方法很多，一一描述太过于繁琐，所以只对我们日常编程中常用的方法进行整理总结。本篇所有代码均已在Chrome浏览器中测试过，可以使用快捷键<strong>Ctrl+Shift+J</strong>打开控制台，输入本篇代码实践一下。</p>
@@ -180,7 +180,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/23/js方法/" data-id="cj6pwg14z0002zcusctaoou8k" class="article-share-link">Delen</a>
+      <a data-url="http://yoursite.com/2017/08/23/js方法/" data-id="cj6pwjyhd000038usoy1t0ehs" class="article-share-link">分享</a>
       
       
       
@@ -217,10 +217,10 @@
         <!-- Table of Contents -->
         
         <p>最近准备找工作，看面试题，JavaScript数组去重几乎每套面试题都有，于是便趁此机会整理了一些JavaScript数组去重的方法。由于是自己总结的，难免有错误的地方，请见谅。</p>
-<p>##双重循环去重<br>此方法是最初接触js时学习的代码，也是最简单的方法。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//在数组中查找某个值</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">findInArr</span>(<span class="params">arr,n</span>)</span>&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;arr.length; i++)&#123;</div><div class="line">        <span class="keyword">if</span>(arr[i]==n)&#123;</div><div class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> arr=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>];</div><div class="line"><span class="comment">//用来存放去重后的数组元素</span></div><div class="line"><span class="keyword">var</span> arr2=[];</div><div class="line"><span class="comment">//遍历需去重的数组</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;arr.length; i++)&#123;</div><div class="line">    <span class="comment">//判断新数组中有无该元素，若没有则推入新数组中</span></div><div class="line">    <span class="keyword">if</span>(findInArr(arr2,arr[i])==<span class="literal">false</span>)&#123;</div><div class="line">        arr2.push(arr[i]);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">document</span>.write(arr2);</div></pre></td></tr></table></figure></p>
+<h2 id="双重循环去重"><a href="#双重循环去重" class="headerlink" title="双重循环去重"></a>双重循环去重</h2><p>此方法是最初接触js时学习的代码，也是最简单的方法。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//在数组中查找某个值</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">findInArr</span>(<span class="params">arr,n</span>)</span>&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;arr.length; i++)&#123;</div><div class="line">        <span class="keyword">if</span>(arr[i]==n)&#123;</div><div class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> arr=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>];</div><div class="line"><span class="comment">//用来存放去重后的数组元素</span></div><div class="line"><span class="keyword">var</span> arr2=[];</div><div class="line"><span class="comment">//遍历需去重的数组</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;arr.length; i++)&#123;</div><div class="line">    <span class="comment">//判断新数组中有无该元素，若没有则推入新数组中</span></div><div class="line">    <span class="keyword">if</span>(findInArr(arr2,arr[i])==<span class="literal">false</span>)&#123;</div><div class="line">        arr2.push(arr[i]);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">document</span>.write(arr2);</div></pre></td></tr></table></figure></p>
 <p>由于该方法是采用多层循环，一层一层查找，当数组数过多时，则耗时且性能消耗过大，不是好的方法。</p>
 <h2 id="使用json的特性"><a href="#使用json的特性" class="headerlink" title="使用json的特性"></a>使用json的特性</h2><p>由于json是键值对结构，且键没有重复，如果重复后面的就会覆盖前面的。所以对数组进行遍历，将每个数组元素作为json的键，由此可以进行数组去重。代码如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'d'</span>,<span class="string">'c'</span>,<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'d'</span>,<span class="string">'c'</span>,<span class="string">'a'</span>,<span class="string">'b'</span>];</div><div class="line"><span class="keyword">var</span> json=&#123;&#125;;</div><div class="line"><span class="comment">//遍历数组，将数组元素作为json的键</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;arr.length; i++)&#123;</div><div class="line">    json[arr[i]]=<span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//将去重后的元素保存在此数组中</span></div><div class="line"><span class="keyword">var</span> arr2=[];</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> name <span class="keyword">in</span> json)&#123;</div><div class="line">    arr2.push(name);</div><div class="line">&#125;</div><div class="line">alert(arr2);</div></pre></td></tr></table></figure></p>
-<p>##使用对象的key特性<br>与json类似，在JavaScript的对象中,有一个特性就是key，key永远不重复,如果重复后面的就会覆盖前面的。实现思路如下：</p>
+<h2 id="使用对象的key特性"><a href="#使用对象的key特性" class="headerlink" title="使用对象的key特性"></a>使用对象的key特性</h2><p>与json类似，在JavaScript的对象中,有一个特性就是key，key永远不重复,如果重复后面的就会覆盖前面的。实现思路如下：</p>
 <ul>
 <li>把数组转换成js对象</li>
 <li>把数组值变成js对象中的key</li>
@@ -232,56 +232,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/12/数组去重/" data-id="cj6pwg1510003zcustfc2rqc0" class="article-share-link">Delen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
- 
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/08/12/hello-world/" class="article-date">
-  <time datetime="2017-08-12T07:50:02.288Z" itemprop="datePublished">2017-08-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/12/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- Table of Contents -->
-        
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/12/hello-world/" data-id="cj6pwg14s0000zcuszk5e3nu7" class="article-share-link">Delen</a>
+      <a data-url="http://yoursite.com/2017/08/12/数组去重/" data-id="cj6pwjyhk000238uski0orivr" class="article-share-link">分享</a>
       
       
       
@@ -330,7 +281,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title recent-posts">Recente berichten</h3>
+    <h3 class="widget-title recent-posts">最新文章</h3>
     <div class="widget">
       <ul>
         
@@ -339,15 +290,11 @@
           </li>
         
           <li>
-            <a href="/2017/08/23/js方法/">js数组方法</a>
+            <a href="/2017/08/23/js方法/">js数组方法总结(一)</a>
           </li>
         
           <li>
             <a href="/2017/08/12/数组去重/">数组去重</a>
-          </li>
-        
-          <li>
-            <a href="/2017/08/12/hello-world/">Hello World</a>
           </li>
         
       </ul>
@@ -357,9 +304,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title archive">Archieven</h3>
+    <h3 class="widget-title archive">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -367,7 +314,7 @@
   
     
 <div class="widget-wrap">
-    <h3 class="widget-title">友情链接</h3>
+    <h3 class="widget-title">Links</h3>
     <div class="widget">
         <ul>
             
@@ -387,7 +334,7 @@
     <!--微信公众号二维码-->
 
   <div class="widget-wrap">
-    <h3 class="follow-title ">微信公众号</h3>
+    <h3 class="follow-title ">WeChat</h3>
     <div class="widget wechat-widget">
         <img src="http://blog.giscafer.com/static/images/qrcode_giscafer.jpg" alt="扫码关注" width="250"/>
     </div>
@@ -403,10 +350,10 @@
   <div class="outer">
     <div id="footer-left">
       &copy; 2014 - 2017 John Doe&nbsp;|&nbsp;
-      Theme by <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+      主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
     </div>
      <div id="footer-right">
-      Contact&nbsp;|&nbsp;youemail@outlook.com
+      联系方式&nbsp;|&nbsp;youemail@outlook.com
     </div>
   </div>
 </footer>
