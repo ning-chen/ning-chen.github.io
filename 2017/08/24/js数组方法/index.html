@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>js数组方法 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JavaScript数组方法总结(二)JavaScript数组提供这些方法来模拟栈和队列。如果对栈和队列的基础知识不太了解的话，可以看看大漠的这篇文章https://www.w3cplus.com/javascript/array-part-3.html，很简单易懂 ##栈方法  数组可以表现得就像栈一样，后者是一种可以限制插入和删除项的数据结构。栈是一种LIFO(Last-In-First-Ou">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js数组方法">
+<meta property="og:url" content="http://yoursite.com/2017/08/24/js数组方法/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="JavaScript数组方法总结(二)JavaScript数组提供这些方法来模拟栈和队列。如果对栈和队列的基础知识不太了解的话，可以看看大漠的这篇文章https://www.w3cplus.com/javascript/array-part-3.html，很简单易懂 ##栈方法  数组可以表现得就像栈一样，后者是一种可以限制插入和删除项的数据结构。栈是一种LIFO(Last-In-First-Ou">
+<meta property="og:updated_time" content="2017-08-24T03:24:38.241Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js数组方法">
+<meta name="twitter:description" content="JavaScript数组方法总结(二)JavaScript数组提供这些方法来模拟栈和队列。如果对栈和队列的基础知识不太了解的话，可以看看大漠的这篇文章https://www.w3cplus.com/javascript/array-part-3.html，很简单易懂 ##栈方法  数组可以表现得就像栈一样，后者是一种可以限制插入和删除项的数据结构。栈是一种LIFO(Last-In-First-Ou">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-js数组方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/24/js数组方法/" class="article-date">
+  <time datetime="2017-08-24T02:29:52.000Z" itemprop="datePublished">2017-08-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js数组方法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="JavaScript数组方法总结-二"><a href="#JavaScript数组方法总结-二" class="headerlink" title="JavaScript数组方法总结(二)"></a>JavaScript数组方法总结(二)</h1><p>JavaScript数组提供这些方法来模拟栈和队列。如果对栈和队列的基础知识不太了解的话，可以看看大漠的这篇文章<a href="https://www.w3cplus.com/javascript/array-part-3.html" target="_blank" rel="external">https://www.w3cplus.com/javascript/array-part-3.html</a>，很简单易懂</p>
+<p>##栈方法</p>
+<blockquote>
+<p>数组可以表现得就像栈一样，后者是一种可以限制插入和删除项的数据结构。栈是一种LIFO(Last-In-First-Out,后进先出)的数据结构，也就是最新添加的项最早被移除。而栈中项的插入(叫做<strong>推入</strong>)和移除(叫做<strong>弹出</strong>)，只发生在一个位置——栈的顶部。ECMAScript 为数组提供了 push() 和 pop() 方法，以便实现栈的行为。摘自《JavaScript高级程序设计》</p>
+<h3 id="push"><a href="#push" class="headerlink" title="push()"></a>push()</h3><p>该方法可以接受任意数量参数，逐次添加到数组末尾，并返回修改后数组的长度。示例如下:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line"><span class="built_in">console</span>.log(arr.push(<span class="number">4</span>));   <span class="comment">//返回4; arr为[1,2,3,4]</span></div><div class="line"><span class="built_in">console</span>.log(arr.push(<span class="number">5</span>,<span class="number">6</span>)); <span class="comment">//返回6; arr为[1,2,3,4,5,6]</span></div><div class="line"><span class="built_in">console</span>.log(arr.push(<span class="number">7</span>,[<span class="number">8</span>,<span class="number">9</span>]));  <span class="comment">//返回8; arr为[1,2,3,4,5,6,7,[8,9]]</span></div></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="concat-VS-push"><a href="#concat-VS-push" class="headerlink" title="concat() VS push()"></a>concat() VS push()</h4><p>上篇文章提到concat()方法也可以传递参数，在数组末尾添加新项。concat()与push()方法有什么不同呢？下面通过几个例子来体会:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//concat()方法</span></div><div class="line"><span class="keyword">var</span> arr = [<span class="string">'c'</span>,<span class="string">'h'</span>];</div><div class="line"><span class="keyword">var</span> i = arr.concat([<span class="string">'e'</span>,<span class="string">'n'</span>]);</div><div class="line"><span class="built_in">console</span>.log(arr);     <span class="comment">//['c','h']</span></div><div class="line"><span class="built_in">console</span>.log(i);       <span class="comment">//['c','h','e','n']</span></div><div class="line"></div><div class="line"><span class="comment">//push()方法</span></div><div class="line"><span class="keyword">var</span> arr = [<span class="string">'c'</span>,<span class="string">'h'</span>];</div><div class="line"><span class="keyword">var</span> i = arr.push([<span class="string">'e'</span>,<span class="string">'n'</span>]);</div><div class="line"><span class="built_in">console</span>.log(arr);    <span class="comment">//['c','h',['e','n']]</span></div><div class="line"><span class="built_in">console</span>.log(i);      <span class="comment">// 3</span></div></pre></td></tr></table></figure></p>
+<p>从上面的例子中可以看出: </p>
+<ul>
+<li>两个方法都是接受参数然后添加在数组末尾，只不过concat()方法不改变原数组，返回新数组，而push()方法直接对原数组进行操作，返回修改后的数组的长度。</li>
+<li>当传递的参数为数组时，push()直接将整个数组添加到数组末尾，而concat()是将参数数组的每一项都添加到数组末尾<h3 id="pop"><a href="#pop" class="headerlink" title="pop()"></a>pop()</h3>pop()方法与push()方法作用相反，删除数组的最后一个元素，同时数组长度减1，并返回删除的项。如果数组为空，则不改变数组，返回undefined。示例如下:<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>];</div><div class="line"><span class="built_in">console</span>.log(arr.pop());   <span class="comment">//1</span></div><div class="line"><span class="built_in">console</span>.log(arr.length);  <span class="comment">//0</span></div><div class="line"><span class="built_in">console</span>.log(arr.pop());   <span class="comment">//undefined</span></div><div class="line"><span class="built_in">console</span>.log(arr.length);  <span class="comment">//0</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="队列方法"><a href="#队列方法" class="headerlink" title="队列方法"></a>队列方法</h2><blockquote>
+<p>队列数据结构的访问规则是LIFO(后进先出),而队列数据结构的访问规则是FIFO(FIrst-In-First-Out,先进先出)。队列在列表的末端添加项，从列表的前端移除项。 摘自《JavaScript高级程序设计》</p>
+<h3 id="shift"><a href="#shift" class="headerlink" title="shift()"></a>shift()</h3><p>shift()方法移除数组中的第一个项并返回该项，同时数组长度减1。如果数组为空，shift()方法将不进行操作，返回undefined,与pop()方法类似。使用push()和shift()方法模拟队列。示例:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line"><span class="built_in">console</span>.log(arr.push(<span class="number">6</span>,<span class="number">7</span>)); <span class="comment">//length: 7</span></div><div class="line"><span class="built_in">console</span>.log(arr); <span class="comment">//[1,2,3,4,5,6,7]</span></div><div class="line"><span class="built_in">console</span>.log(arr.shift()); <span class="comment">//第一项: 1</span></div><div class="line"><span class="built_in">console</span>.log(arr); <span class="comment">//[2,3,4,5,6,7]</span></div></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="unshift"><a href="#unshift" class="headerlink" title="unshift()"></a>unshift()</h3><p>unshift()方法是向数组前端添加一个或多个元素，并返回新的长度。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>];</div><div class="line"><span class="built_in">console</span>.log(arr.unshift(<span class="number">3</span>)); <span class="comment">//3</span></div><div class="line"><span class="built_in">console</span>.log(arr); <span class="comment">//[3,1,2]</span></div><div class="line"><span class="built_in">console</span>.log(arr.unshift([<span class="string">'c'</span>,<span class="string">'h'</span>])); <span class="comment">// 5</span></div><div class="line"><span class="built_in">console</span>.log(arr); <span class="comment">//[['c','h'],3,1,2]</span></div></pre></td></tr></table></figure></p>
+<p>由于unshift()在开头添加元素，每添加一个元素，都要把现有的元素往下移一个位置，所以效率低。当对大数组进行处理时，可以使用数组的reverse()方法，该方法将一个数组反转。然后将要放进数组的元素用push()方法添加，再执行一次reverse()，就与unshift()的效果相同。有人说这种办法比直接使用unshift()繁琐，所以效率也不会太好。我们用数据说话，事实胜于雄辩！具体测试参考本篇文章，链接奉上</p>
+<blockquote>
+<p><a href="https://www.w3cplus.com/javascript/array-part-3.html" target="_blank" rel="external">https://www.w3cplus.com/javascript/array-part-3.html</a> © w3cplus.com</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>push()方法可以在数组的末属添加一个或多个元素，返回修改后的数组长度</li>
+<li>shift()方法把数组中的第一个元素删除，返回删除的元素</li>
+<li>unshift()方法可以在数组的前端添加一个或多个元素，返回修改后的数组长度</li>
+<li>pop()方法把数组中的最后一个元素删除，返回删除的元素</li>
+<li>四个方法都直接修改原数组</li>
+</ul>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/08/24/js数组方法/" data-id="cj6pvxjhu0001u8uswt6wofpy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/23/js方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">js数组方法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/24/js数组方法/">js数组方法</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/23/js方法/">js数组方法</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/12/数组去重/">数组去重</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/12/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
